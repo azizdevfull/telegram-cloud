@@ -52,7 +52,9 @@ class RegisteredUserController extends Controller
                 'document' => InputFile::createFromContents(file_get_contents($document), $document->getClientOriginalName()),
             ]);
             $messageId = $response;
+            // dd($response);
             $file = Telegram::getFile(['file_id' => $messageId->document['file_id']]);
+            // dd($file);
             $filePath = $file['file_path'];
             $fileUrl = 'https://api.telegram.org/file/bot' . Telegram::getAccessToken() . '/' . $filePath;
             $user->avatar = $fileUrl;

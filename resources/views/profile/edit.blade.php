@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     @if ($user->avatar)
-        <img src="{{ $user->avatar }}" alt="Avatar" class="rounded-full h-16 w-16">
+        <img src="{{$user->avatar}}" alt="Avatar" class="rounded-full h-16 w-16">
     @else
         <span class="rounded-full bg-gray-300 h-16 w-16 flex items-center justify-center text-gray-500">
             {{ substr($user->name, 0, 1) }}
